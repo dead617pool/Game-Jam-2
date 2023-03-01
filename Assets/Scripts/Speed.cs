@@ -25,7 +25,7 @@ public class Speed : MonoBehaviour
     private void FixedUpdate()
     {
 
-        distance += velocity.x * Time.fixedDeltaTime;
+        distance += (velocity.x / 5) * Time.fixedDeltaTime;
 
         Vector2 pos = transform.position;
 
