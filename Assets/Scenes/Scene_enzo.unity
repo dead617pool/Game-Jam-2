@@ -217,8 +217,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1846152914}
   - component: {fileID: 1846152913}
+  - component: {fileID: 1846152916}
+  - component: {fileID: 1846152917}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,3 +293,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846152916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846152912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9cc49f1088aadc4a8f7149e14953595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0}
+  maxXVelocity: 300
+  maxAcceleration: 7
+  acceleration: 7
+  distance: 0
+--- !u!114 &1846152917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846152912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1686fc77ae2e44044b0b1423f47e694c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMouvement: 0
+  Mouvement: 0
+  minMouvement: 0
+  canmoove: 1
