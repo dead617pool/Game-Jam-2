@@ -6,9 +6,9 @@ public class Speed : MonoBehaviour
 {
 
     public Vector2 velocity;
-    public float maxXVelocity = 100;
-    public float maxAcceleration = 10;
-    public float acceleration = 10;
+    public float maxXVelocity = 300;
+    public float maxAcceleration = 7;
+    public float acceleration = 7;
     public float distance = 0;
 
     void Start()
