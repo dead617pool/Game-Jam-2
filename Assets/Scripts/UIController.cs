@@ -8,16 +8,18 @@ public class UIController : MonoBehaviour
 
     Speed speed;
     Text distanceText;
+    public Text highScoreText;
 
     private void Awake()
     {
         speed = GameObject.Find("Player").GetComponent<Speed>();
         distanceText = GameObject.Find("DistanceText").GetComponent<Text>();
+        highScoreText = GameObject.Find("HighScoreText").GetComponent<Text>();
     }
 
     void Start()
     {
-        
+        highScoreText.text = PlayerPrefs.GetInt("HighScoreText", 0).ToString();
     }
 
 
@@ -25,5 +27,13 @@ public class UIController : MonoBehaviour
     {
         int distance = Mathf.FloorToInt(speed.distance);
         distanceText.text = "Score : " + distance;
+
+        if (distance > PlayerPrefs.GetInt("HighScoreText", 0))
+        {
+            PlayerPrefs.SetInt("HighScoreText", distance);
+            highScoreText.text = distance.ToString();
+        }
+        
     }
+
 }
