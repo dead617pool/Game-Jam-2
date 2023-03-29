@@ -8,20 +8,32 @@ public class UIController : MonoBehaviour
 
     Speed speed;
     Text distanceText;
-    public Text highScoreText;
+    Text highScoreText;
+    // public GameObject GameOverPanel;
+    // public bool isHit;
 
     private void Awake()
     {
         speed = GameObject.Find("Player").GetComponent<Speed>();
         distanceText = GameObject.Find("DistanceText").GetComponent<Text>();
         highScoreText = GameObject.Find("HighScoreText").GetComponent<Text>();
+
+        // GameOverPanel.SetActive(false);
     }
 
     void Start()
     {
-        highScoreText.text = PlayerPrefs.GetInt("HighScoreText", 0).ToString();
+        highScoreText.text = "HighScore : " + PlayerPrefs.GetInt("HighScoreText", 0).ToString();
     }
 
+    // void FixedUpdate()
+    // {
+    //     if (!isHit && Input.GetKeyDown(KeyCode.Z))
+    //     {
+    //         Time.timeScale = 1f;
+    //         GameOverPanel.SetActive(false);
+    //     }
+    // }
 
     void Update()
     {
@@ -31,9 +43,14 @@ public class UIController : MonoBehaviour
         if (distance > PlayerPrefs.GetInt("HighScoreText", 0))
         {
             PlayerPrefs.SetInt("HighScoreText", distance);
-            highScoreText.text = distance.ToString();
+            highScoreText.text = "HighScore : " + distance.ToString();
         }
         
+        // if (isHit)
+        // {
+        //     GameOverPanel.SetActive(true);
+        //     Time.timeScale = 0f;
+        // }
     }
 
 }
