@@ -8,7 +8,9 @@ public class UIController : MonoBehaviour
 
     Speed speed;
     Text distanceText;
-    public Text highScoreText;
+    Text highScoreText;
+    // public GameObject GameOverPanel;
+    // public bool isHit;
 
     private void Awake()
     {
@@ -21,10 +23,18 @@ public class UIController : MonoBehaviour
     {
         if (highScoreText != null)
         {
-            highScoreText.text = PlayerPrefs.GetInt("HighScoreText", 0).ToString();
+            highScoreText.text = "HighScore : " + PlayerPrefs.GetInt("HighScoreText", 0).ToString();
         }
     }
 
+    // void FixedUpdate()
+    // {
+    //     if (!isHit && Input.GetKeyDown(KeyCode.Z))
+    //     {
+    //         Time.timeScale = 1f;
+    //         GameOverPanel.SetActive(false);
+    //     }
+    // }
 
     void Update()
     {
@@ -36,10 +46,15 @@ public class UIController : MonoBehaviour
             PlayerPrefs.SetInt("HighScoreText", distance);
             if (highScoreText != null)
             {
-                highScoreText.text = distance.ToString();
+                highScoreText.text = "HighScore : " + distance.ToString();
             }
         }
         
+        // if (isHit)
+        // {
+        //     GameOverPanel.SetActive(true);
+        //     Time.timeScale = 0f;
+        // }
     }
 
 }
