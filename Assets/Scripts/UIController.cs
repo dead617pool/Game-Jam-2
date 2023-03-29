@@ -14,12 +14,15 @@ public class UIController : MonoBehaviour
     {
         speed = GameObject.Find("Player").GetComponent<Speed>();
         distanceText = GameObject.Find("DistanceText").GetComponent<Text>();
-        highScoreText = GameObject.Find("HighScoreText").GetComponent<Text>();
+        highScoreText = GameObject.Find("HighScoreText")?.GetComponent<Text>();
     }
 
     void Start()
     {
-        highScoreText.text = PlayerPrefs.GetInt("HighScoreText", 0).ToString();
+        if (highScoreText != null)
+        {
+            highScoreText.text = PlayerPrefs.GetInt("HighScoreText", 0).ToString();
+        }
     }
 
 
@@ -31,7 +34,10 @@ public class UIController : MonoBehaviour
         if (distance > PlayerPrefs.GetInt("HighScoreText", 0))
         {
             PlayerPrefs.SetInt("HighScoreText", distance);
-            highScoreText.text = distance.ToString();
+            if (highScoreText != null)
+            {
+                highScoreText.text = distance.ToString();
+            }
         }
         
     }
