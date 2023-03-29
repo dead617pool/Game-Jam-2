@@ -10,7 +10,7 @@ namespace Assets.Scripts
         [SerializeField] private int pointsNeededToUnlock;
         [SerializeField] private string name { get; }
 
-        public bool IsUnlocked(int hitscore) { return hitscore >= pointsNeededToUnlock; }
+        public bool IsUnlocked(int highscore) { return highscore >= pointsNeededToUnlock; }
 
         public abstract void Effect(Player player);
 
