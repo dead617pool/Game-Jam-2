@@ -21,12 +21,12 @@ public class mouvement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) && Mouvement <= maxMouvement)
             {
                 Debug.Log("test");
-                transform.Translate(0, 2.5f, 0);
+                transform.Translate(0, 5f, 0);
                 Mouvement++;
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow) && Mouvement >= -minMouvement)
             {
-                transform.Translate(0, -2.5f, 0);
+                transform.Translate(0, -5f, 0);
                 Mouvement--;
             }
             canmoove =true;
