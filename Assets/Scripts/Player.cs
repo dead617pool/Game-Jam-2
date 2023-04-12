@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     {
         if(compteurShield==0)
             Destroy(gameObject);
+            
         compteurShield--;
     }
     void Start()
