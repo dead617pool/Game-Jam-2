@@ -1,30 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Speed : MonoBehaviour
 {
 
     public Vector2 velocity;
-    public float maxXVelocity = 300;
+    public float maxXVelocity = 200;
     public float maxAcceleration = 7;
     public float acceleration = 7;
     public float distance = 0;
 
-    void Start()
-    {
-        
-    }
 
-
-    void Update()
-    {
-        
-    }
 
     private void FixedUpdate()
     {
-
         distance += (velocity.x / 5) * Time.fixedDeltaTime;
 
         Vector2 pos = transform.position;
@@ -37,10 +28,6 @@ public class Speed : MonoBehaviour
         {
             velocity.x = maxXVelocity;
         }
-
         transform.position = pos;
     }
-
-    
-
 }
