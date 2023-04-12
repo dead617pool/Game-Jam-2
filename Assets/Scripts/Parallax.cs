@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
 
     public float depth = 1;
-
-    Speed speed;
-
+    Speed speed;    
+    public float pointOfLeave = -40;
+    public float pointOfEnter = 40;
     private void Awake()
     {
         speed = GameObject.Find("Player").GetComponent<Speed>();
+        
     }
 
     void Start()
@@ -27,8 +29,8 @@ public class Parallax : MonoBehaviour
 
         pos.x -= realVelocity * Time.fixedDeltaTime;
 
-        if (pos.x <= -20)
-            pos.x = 20;
+        if (pos.x <= pointOfLeave)
+            pos.x = pointOfEnter ;
             
         transform.position = pos;
     }
