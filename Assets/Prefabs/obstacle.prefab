@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3554903103750286829}
   - component: {fileID: 3554903103750286826}
   - component: {fileID: 582780828669137881}
+  - component: {fileID: 560602764}
   m_Layer: 0
   m_Name: obstacle
   m_TagString: enemy
@@ -75,9 +76,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 150
   m_Sprite: {fileID: 21300000, guid: 20c86faf9082db943a74ae05e0267e67, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,3 +148,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &560602764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3554903103750286827}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e4121af34b1ec4fb00544f30e391a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depth: 5
+  pointOfLeave: -40
+  pointOfEnter: 0

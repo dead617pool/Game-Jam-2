@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class mouvement : MonoBehaviour
+public class Mouvement : MonoBehaviour
 {
     [SerializeField]
     private int maxMouvement;
     [SerializeField]
-    private int Mouvement;
+    private int mouvement;
     [SerializeField]
     private int minMouvement;
     [SerializeField]
@@ -18,16 +18,16 @@ public class mouvement : MonoBehaviour
     {
         if (canmoove){
             canmoove = false;
-            if (Input.GetKeyDown(KeyCode.UpArrow) && Mouvement <= maxMouvement)
+            if (Input.GetKeyDown(KeyCode.UpArrow) && mouvement <= maxMouvement)
             {
                 Debug.Log("test");
                 transform.Translate(0, 5f, 0);
-                Mouvement++;
+                mouvement++;
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow) && Mouvement >= -minMouvement)
+            else if (Input.GetKeyDown(KeyCode.DownArrow) && mouvement >= -minMouvement)
             {
                 transform.Translate(0, -5f, 0);
-                Mouvement--;
+                mouvement--;
             }
             canmoove =true;
         }
