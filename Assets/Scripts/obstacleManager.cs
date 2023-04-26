@@ -37,24 +37,33 @@ public class obstacleManager : MonoBehaviour
     {
         if (canSpawn)
         {
-            StartCoroutine(SpawnAgain());
+            canSpawn = false;
+            if (speed.velocity.x < xSpeed)
+            {
+                StartCoroutine(SpawnAgain(xDelay));
+
+            }
+            else
+            {
+                StartCoroutine(SpawnAgain(yDelay / (speed.velocity.x)));
+
+            }
         }
     }
-    IEnumerator SpawnAgain()
+    IEnumerator SpawnAgain(float time)
     {
-        canSpawn = false;
+   
+         yield return new WaitForSeconds(time);
+        
+
+
         int spawnPointObstacle1 = UnityEngine.Random.Range(0, 3);
         int spawnPointObstacle2 = UnityEngine.Random.Range(0, 3);
-        Debug.Log("spawnpoint 1" +spawnPointObstacle1);
-        Debug.Log("spawnpoint 2" +spawnPointObstacle2);
-        Debug.Log("speed" + speed.velocity);
         Instantiate(obstacle, SpawningObject[spawnPointObstacle1].transform.position, SpawningObject[spawnPointObstacle1].transform.rotation);
         if (spawnPointObstacle2 !=spawnPointObstacle1) 
             Instantiate(obstacle, SpawningObject[spawnPointObstacle2].transform.position, SpawningObject[spawnPointObstacle2].transform.rotation);
-        if (speed.velocity.x < xSpeed)
-        { yield return new WaitForSeconds(xDelay / (speed.velocity.x * coeff)); canSpawn = true;
-        }
-        else
-        { yield return new WaitForSeconds(zDelay / (speed.velocity.x * coeff)); canSpawn = true;
-        }    }
+
+        canSpawn = true;
+    }
+
 }

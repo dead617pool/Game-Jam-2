@@ -9,27 +9,28 @@ public class Mouvement : MonoBehaviour
     [SerializeField]
     private int minMouvement;
     [SerializeField]
-    private bool canmoove;
+    private bool canmoove = true;
     private void Start()
     {
         
     }
     void Update()
     {
-        if (canmoove){
-            canmoove = false;
-            if (Input.GetKeyDown(KeyCode.UpArrow) && mouvement <= maxMouvement)
+        
+            if (Input.GetKeyDown(KeyCode.UpArrow) && mouvement < maxMouvement)
             {
-                Debug.Log("test");
+                Debug.Log("up");
                 transform.Translate(0, 5f, 0);
                 mouvement++;
             }
-            else if (Input.GetKeyDown(KeyCode.DownArrow) && mouvement >= -minMouvement)
+            else if (Input.GetKeyDown(KeyCode.DownArrow) && mouvement > -minMouvement)
             {
-                transform.Translate(0, -5f, 0);
+            Debug.Log("ddddd");
+
+            transform.Translate(0, -5f, 0);
                 mouvement--;
             }
             canmoove =true;
-        }
+        
     }
 }
