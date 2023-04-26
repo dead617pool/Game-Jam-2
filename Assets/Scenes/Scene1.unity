@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 175338727}
   - component: {fileID: 175338726}
   m_Layer: 0
-  m_Name: carreRouge
+  m_Name: Route1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,7 +353,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1047202473}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &175338726
 MonoBehaviour:
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 570265903}
   - component: {fileID: 570265904}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Rocher+Maisons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +620,7 @@ Transform:
   - {fileID: 1622704280}
   - {fileID: 229457539}
   m_Father: {fileID: 1047202473}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &570265904
 MonoBehaviour:
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 992997898}
   - component: {fileID: 992997897}
   m_Layer: 0
-  m_Name: background2
+  m_Name: Ciel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -668,7 +668,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1047202473}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &992997897
 MonoBehaviour:
@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e4121af34b1ec4fb00544f30e391a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depth: 5
+  depth: 15
   pointOfLeave: 0
   pointOfEnter: 99
 --- !u!212 &992997898
@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 1005974050}
   - component: {fileID: 1005974049}
   m_Layer: 0
-  m_Name: carreVert (1)
+  m_Name: Rocher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -768,7 +768,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1047202473}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1005974049
 MonoBehaviour:
@@ -865,12 +865,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 175338725}
   - {fileID: 1628197361}
   - {fileID: 992997896}
   - {fileID: 1005974048}
-  - {fileID: 1666127259}
   - {fileID: 570265903}
+  - {fileID: 175338725}
+  - {fileID: 1666127259}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -887,8 +887,8 @@ GameObject:
   - component: {fileID: 1267024451}
   - component: {fileID: 1267024454}
   - component: {fileID: 1267024455}
-  - component: {fileID: 1267024456}
   - component: {fileID: 1267024457}
+  - component: {fileID: 1267024458}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -973,7 +973,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267024450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.6, y: -15.4, z: 0}
+  m_LocalPosition: {x: -20.6, y: -11.44, z: 0}
   m_LocalScale: {x: 1.9684039, y: 1.6661286, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1027,22 +1027,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1267024456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267024450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1686fc77ae2e44044b0b1423f47e694c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMouvement: 2
-  mouvement: 0
-  minMouvement: -2
-  canmoove: 1
 --- !u!114 &1267024457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,6 +1044,22 @@ MonoBehaviour:
   Rigidbody: {fileID: 1267024455}
   compteurShield: 0
   isDead: 0
+--- !u!114 &1267024458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267024450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1686fc77ae2e44044b0b1423f47e694c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMouvement: 1
+  mouvement: 0
+  minMouvement: 1
+  canmoove: 0
 --- !u!1001 &1307089722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1070,6 +1070,10 @@ PrefabInstance:
     - target: {fileID: 9053322713323494665, guid: 5362998ea12aee64b9ed3377a7e41d82, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053322713323494669, guid: 5362998ea12aee64b9ed3377a7e41d82, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9053322713323494670, guid: 5362998ea12aee64b9ed3377a7e41d82, type: 3}
       propertyPath: m_Pivot.x
@@ -1158,7 +1162,7 @@ PrefabInstance:
     - target: {fileID: 9053322713823127982, guid: 5362998ea12aee64b9ed3377a7e41d82, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dbbcd737ee14aee499c38e29d14ce891, type: 3}
+      objectReference: {fileID: 21300000, guid: 1a7f84dbeab842b468e72ce25742df91, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5362998ea12aee64b9ed3377a7e41d82, type: 3}
 --- !u!1 &1502754771
@@ -1341,7 +1345,7 @@ GameObject:
   - component: {fileID: 1628197363}
   - component: {fileID: 1628197362}
   m_Layer: 0
-  m_Name: backgound1
+  m_Name: Ciel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1360,7 +1364,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1047202473}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1628197362
 MonoBehaviour:
@@ -1374,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e4121af34b1ec4fb00544f30e391a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depth: 5
+  depth: 15
   pointOfLeave: -99
   pointOfEnter: 0
 --- !u!212 &1628197363
@@ -1441,7 +1445,7 @@ GameObject:
   - component: {fileID: 1666127261}
   - component: {fileID: 1666127260}
   m_Layer: 0
-  m_Name: carreRouge (1)
+  m_Name: Route2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1460,7 +1464,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1047202473}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1666127260
 MonoBehaviour:
@@ -1563,8 +1567,14 @@ MonoBehaviour:
   - {fileID: 57844588}
   - {fileID: 2070308838}
   obstacle: {fileID: 3554903103750286827, guid: 35cb0a85469dbc149baa53f6f72931c4, type: 3}
-  delay: 2
-  canSpawn: 0
+  xDelay: 1
+  yDelay: 40
+  zDelay: 50
+  canSpawn: 1
+  speed: {fileID: 517431091}
+  coeff: 1
+  xSpeed: 40
+  ySpeed: 50
 --- !u!4 &1987713752
 Transform:
   m_ObjectHideFlags: 0
