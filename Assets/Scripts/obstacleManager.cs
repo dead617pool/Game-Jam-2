@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,26 @@ public class obstacleManager : MonoBehaviour
     [SerializeField]
     private GameObject obstacle;
     [SerializeField]
-    private float delay;
+    private float xDelay;
+    [SerializeField]
+    private float yDelay;
+    [SerializeField]
+    private float zDelay;
     [SerializeField]
     private bool canSpawn;
+    [SerializeField]
+    Speed speed;
+    [SerializeField]
+    private float coeff;
+    [SerializeField]
+    private float xSpeed;
+    [SerializeField]
+    private float ySpeed;
 
+    private void Awake()
+    {
+        speed = GameObject.Find("Player").GetComponent<Speed>();
+    }
     private void Start()
     {
         canSpawn = true;
@@ -26,10 +43,18 @@ public class obstacleManager : MonoBehaviour
     IEnumerator SpawnAgain()
     {
         canSpawn = false;
-        int randomvalue = Random.Range(0, 3);
-        Debug.Log(randomvalue);
-        Instantiate(obstacle, SpawningObject[randomvalue].transform.position, SpawningObject[randomvalue].transform.rotation);
-        yield return new WaitForSeconds(delay);
-        canSpawn = true;
-    }
+        int spawnPointObstacle1 = UnityEngine.Random.Range(0, 3);
+        int spawnPointObstacle2 = UnityEngine.Random.Range(0, 3);
+        Debug.Log("spawnpoint 1" +spawnPointObstacle1);
+        Debug.Log("spawnpoint 2" +spawnPointObstacle2);
+        Debug.Log("speed" + speed.velocity);
+        Instantiate(obstacle, SpawningObject[spawnPointObstacle1].transform.position, SpawningObject[spawnPointObstacle1].transform.rotation);
+        if (spawnPointObstacle2 !=spawnPointObstacle1) 
+            Instantiate(obstacle, SpawningObject[spawnPointObstacle2].transform.position, SpawningObject[spawnPointObstacle2].transform.rotation);
+        if (speed.velocity.x < xSpeed)
+        { yield return new WaitForSeconds(xDelay / (speed.velocity.x * coeff)); canSpawn = true;
+        }
+        else
+        { yield return new WaitForSeconds(zDelay / (speed.velocity.x * coeff)); canSpawn = true;
+        }    }
 }

@@ -32,10 +32,11 @@ public class obstacle : MonoBehaviour
         Vector2 pos = transform.position;
 
         pos.x -= realVelocity * Time.fixedDeltaTime;
-        if (pos.x < -35)
-        {
-            Destroy(gameObject);
-        }
+
         transform.position = pos;
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
