@@ -1,4 +1,7 @@
+using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -6,17 +9,27 @@ public class Player : MonoBehaviour
     public Collider2D Collider;
     public Rigidbody2D Rigidbody;
 
-    private int compteurShield=0;
+    public int compteurShield=0;
+    public bool isDead = false;
     public void IncrementShieldNumber() { compteurShield++; }  
     public void TakeHit()
     {
         if(compteurShield==0)
-            Destroy(gameObject);
+            isDead = true;
             
         compteurShield--;
     }
-    void Start()
+    void Update()
     {
+        if(isDead)
+        {   
+            endFrame();
+        }
+    }
 
+    IEnumerator endFrame()
+    {
+        yield return new WaitForEndOfFrame();
+        Destroy(gameObject);
     }
 }

@@ -11,11 +11,14 @@ public class obstacle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player player= collision.gameObject.GetComponent<Player>();
+        Player player= collision.GetComponent<Player>();
+        Debug.Log("trigger");
         if (player != null )
         {
             Debug.Log("aille");
             player.TakeHit();
+            Destroy(this.gameObject);
+
         }
     }
 
