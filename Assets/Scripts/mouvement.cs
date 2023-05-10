@@ -17,6 +17,13 @@ public class Mouvement : MonoBehaviour
     void Update()
     {
         
+            if (Input.GetKeyDown(KeyCode.Z) && mouvement < maxMouvement)
+            {
+            transform.Translate(0, 5f, 0);
+                mouvement++;
+            }
+            else if (Input.GetKeyDown(KeyCode.S) && mouvement > -minMouvement)
+            {
 
             if (Input.GetKeyDown(KeyCode.Z) && mouvement < maxMouvement)
             {
