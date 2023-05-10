@@ -39,9 +39,6 @@ public class obstacleManager : MonoBehaviour
     }
     private void Update()
     {
-
-
-
          if (canSpawn)
         {
             canSpawn = false;
@@ -99,7 +96,11 @@ public class obstacleManager : MonoBehaviour
          yield return new WaitForSeconds(time);
 
         var availableBonus = GetUnlockedBonus();
-
+    IEnumerator SpawnAgain(float time)
+    {
+   
+         yield return new WaitForSeconds(time);
+        
         int spawnPointObstacle1 = UnityEngine.Random.Range(0, 3);
         int spawnPointObstacle2 = UnityEngine.Random.Range(0, 3);
         Instantiate(obstacle, SpawningObject[spawnPointObstacle1].transform.position, SpawningObject[spawnPointObstacle1].transform.rotation);
@@ -117,6 +118,9 @@ public class obstacleManager : MonoBehaviour
                 Instantiate(obstacle, SpawningObject[spawnPointObstacle2].transform.position, SpawningObject[spawnPointObstacle2].transform.rotation);
 
         }
+
+        if (spawnPointObstacle2 !=spawnPointObstacle1) 
+            Instantiate(obstacle, SpawningObject[spawnPointObstacle2].transform.position, SpawningObject[spawnPointObstacle2].transform.rotation);
 
         canSpawn = true;
     }

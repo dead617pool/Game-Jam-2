@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public SpriteRenderer SpriteRenderer;
     public Collider2D Collider;
     public Rigidbody2D Rigidbody;
+    public Animator animator;
 
     public int compteurShield=0;
     public bool isDead = false;
