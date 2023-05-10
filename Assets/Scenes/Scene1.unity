@@ -1143,7 +1143,7 @@ MonoBehaviour:
   maxMouvement: 1
   mouvement: 0
   minMouvement: 1
-  canmoove: 0
+  canmoove: 1
 --- !u!114 &1267024457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1571,6 +1571,7 @@ MonoBehaviour:
   coeff: 1
   xSpeed: 60
   ySpeed: 120
+  ForceDelay: 0
 --- !u!4 &1987713752
 Transform:
   m_ObjectHideFlags: 0

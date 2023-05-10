@@ -24,6 +24,8 @@ public class obstacleManager : MonoBehaviour
     private float xSpeed;
     [SerializeField]
     private float ySpeed;
+    [SerializeField]
+    private int ForceDelay = 0;
 
     private void Awake()
     {
@@ -32,15 +34,31 @@ public class obstacleManager : MonoBehaviour
     private void Start()
     {
         canSpawn = true;
+
     }
     private void Update()
     {
-        if (canSpawn)
+
+
+         if (canSpawn)
         {
             canSpawn = false;
+            var t = xDelay;
+
+            if (ForceDelay == 1)
+            {
+                t += 1;
+                ForceDelay++;
+            }else
+            {
+                 t = xDelay;
+            }
+
+            if(ForceDelay<1) ForceDelay++;
+
             if (speed.velocity.x < xSpeed)
             {
-                StartCoroutine(SpawnAgain(xDelay));
+                StartCoroutine(SpawnAgain(t));
 
             }
             else
@@ -65,5 +83,7 @@ public class obstacleManager : MonoBehaviour
 
         canSpawn = true;
     }
+    IEnumerator Delay(float wait)
+    { yield return new WaitForSeconds(wait); }
 
 }
