@@ -12,7 +12,9 @@ public class UIController : MonoBehaviour
     Text distanceText;
     Text highScoreText;
     GameObject GameOverPanel;
-
+    AudioSource GameOverMusic;
+    AudioSource MainMusic;
+    bool gameOverMusicStart = false;
 
     // public bool IsPlayerDestroyed()
     // {
@@ -30,6 +32,8 @@ public class UIController : MonoBehaviour
         highScoreText = GameObject.Find("HighScoreText").GetComponent<Text>();
         GameOverPanel = GameObject.Find("GameOverPanel");
         player = GameObject.Find("Player").GetComponent<Player>();
+        GameOverMusic = GameObject.Find("GameOverMusic").GetComponent<AudioSource>();
+        MainMusic = GameObject.Find("MainMusic").GetComponent<AudioSource>();
 
         GameOverPanel.SetActive(false);
         highScoreText.text = "HighScore : " + PlayerPrefs.GetInt("HighScoreText", 0).ToString();
@@ -48,8 +52,13 @@ public class UIController : MonoBehaviour
 
         if(player.isDead)
         {
+            MainMusic.enabled = false;
             speed.enabled = false;
             GameOverPanel.SetActive(true);
+            if(!gameOverMusicStart){
+                GameOverMusic.Play();
+                gameOverMusicStart= true;
+            }
         }
 
         if(player.isDead && Input.GetKeyDown(KeyCode.S))
